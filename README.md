@@ -34,11 +34,11 @@ client_options: (optional)
 
 example:
 
-    config.omniauth :clover, "APP_ID", "APP_SECRET", :client_options => {:site => 'https://dev.server.com'}
+    config.omniauth :clover, "APP_ID", "APP_SECRET", client_options: { site: 'https://dev.server.com' }
 
 2) make your user model omniauthable
 
-    `devise :omniauthable, :omniauth_providers => [:clover]`
+    `devise :omniauthable, omniauth_providers: %i[clover]`
     
 3) once your user model is omniauthable and if your devise_for :user was added to config/routes.rb, you will have the following routes available:
 
@@ -50,7 +50,7 @@ example:
 4) create sign in link
 
   ```erb
-    <%= link_to "Sign in with Clover", user_omniauth_authorize_path(:clover) %> 
+    <%= link_to "Sign in with Clover", user_clover_omniauth_authorize_path %> 
   ```
 5) callback
 
