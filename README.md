@@ -43,8 +43,8 @@ example:
 3) once your user model is omniauthable and if your devise_for :user was added to config/routes.rb, you will have the following routes available:
 
   ```ruby
-    user_omniauth_authorize_path(provider)
-    user_omniauth_callback_path(provider)
+    user_clover_omniauth_authorize_path
+    user_clover_omniauth_callback_path
   ```
     
 4) create sign in link
